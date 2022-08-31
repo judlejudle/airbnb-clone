@@ -5,7 +5,7 @@ from django.db import models
 
 class User(AbstractUser):
 
-    """Custom User Model"""
+    """Custom User Model(Admin)"""
 
     GENDER_MALE = "male"
     GENDER_FEMALE = "female"
