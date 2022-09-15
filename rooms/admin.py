@@ -36,7 +36,10 @@ class RoomAdmin(admin.ModelAdmin):
         ("Spaces", {"fields": ("guests", "beds", "bedrooms", "baths")}),
         (
             "More about the Sapce",
-            {"classes": ("collapse",), "fields": ("amenities", "facilities")},
+            {
+                "classes": ("collapse",),
+                "fields": ("amenities", "facilities", "house_rule"),
+            },
         ),
         ("Last Details", {"fields": ("host",)}),
     )
@@ -81,6 +84,8 @@ class RoomAdmin(admin.ModelAdmin):
 
     def count_photos(self, obj):
         return obj.photos.count()
+
+    count_photos.short_description = "Photo Count"
 
 
 @admin.register(models.Photo)
